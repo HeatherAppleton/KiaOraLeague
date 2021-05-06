@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="vBowlerDetail" targetNamespace="http://tempuri.org/vBowlerDetail.xsd" xmlns:mstns="http://tempuri.org/vBowlerDetail.xsd" xmlns="http://tempuri.org/vBowlerDetail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hba_leagueConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hba_leagueConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.KiaOra.Properties.Settings.GlobalReference.Default.hba_leagueConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vBowlerDetailTableAdapter" GeneratorDataComponentClassName="vBowlerDetailTableAdapter" Name="vBowlerDetail" UserDataComponentName="vBowlerDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hba_leagueConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   b.id 
+               ,b.bowler_name  
+               ,b.address 
+               ,b.phone 
+               ,b.privacy_flag 
+               ,b.active_flag 
+               ,b.gender 
+               ,b.team_id 
+               ,b.position 
+               ,b.email 
+               ,t.team_name 
+FROM   hba_bowler b 
+JOIN      hba_team   t on t.id = b.team_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="bowler_name" DataSetColumn="bowler_name" />
+              <Mapping SourceColumn="address" DataSetColumn="address" />
+              <Mapping SourceColumn="phone" DataSetColumn="phone" />
+              <Mapping SourceColumn="privacy_flag" DataSetColumn="privacy_flag" />
+              <Mapping SourceColumn="active_flag" DataSetColumn="active_flag" />
+              <Mapping SourceColumn="gender" DataSetColumn="gender" />
+              <Mapping SourceColumn="team_id" DataSetColumn="team_id" />
+              <Mapping SourceColumn="position" DataSetColumn="position" />
+              <Mapping SourceColumn="email" DataSetColumn="email" />
+              <Mapping SourceColumn="team_name" DataSetColumn="team_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="vBowlerDetail" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="vBowlerDetail" msprop:Generator_UserDSName="vBowlerDetail">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vBowlerDetail" msprop:Generator_TableClassName="vBowlerDetailDataTable" msprop:Generator_TableVarName="tablevBowlerDetail" msprop:Generator_TablePropName="_vBowlerDetail" msprop:Generator_RowDeletingName="vBowlerDetailRowDeleting" msprop:Generator_RowChangingName="vBowlerDetailRowChanging" msprop:Generator_RowEvHandlerName="vBowlerDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="vBowlerDetailRowDeleted" msprop:Generator_UserTableName="vBowlerDetail" msprop:Generator_RowChangedName="vBowlerDetailRowChanged" msprop:Generator_RowEvArgName="vBowlerDetailRowChangeEvent" msprop:Generator_RowClassName="vBowlerDetailRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="bowler_name" msprop:Generator_ColumnVarNameInTable="columnbowler_name" msprop:Generator_ColumnPropNameInRow="bowler_name" msprop:Generator_ColumnPropNameInTable="bowler_nameColumn" msprop:Generator_UserColumnName="bowler_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="address" msprop:Generator_ColumnVarNameInTable="columnaddress" msprop:Generator_ColumnPropNameInRow="address" msprop:Generator_ColumnPropNameInTable="addressColumn" msprop:Generator_UserColumnName="address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="phone" msprop:Generator_ColumnVarNameInTable="columnphone" msprop:Generator_ColumnPropNameInRow="phone" msprop:Generator_ColumnPropNameInTable="phoneColumn" msprop:Generator_UserColumnName="phone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="privacy_flag" msprop:Generator_ColumnVarNameInTable="columnprivacy_flag" msprop:Generator_ColumnPropNameInRow="privacy_flag" msprop:Generator_ColumnPropNameInTable="privacy_flagColumn" msprop:Generator_UserColumnName="privacy_flag">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="active_flag" msprop:Generator_ColumnVarNameInTable="columnactive_flag" msprop:Generator_ColumnPropNameInRow="active_flag" msprop:Generator_ColumnPropNameInTable="active_flagColumn" msprop:Generator_UserColumnName="active_flag">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="gender" msprop:Generator_ColumnVarNameInTable="columngender" msprop:Generator_ColumnPropNameInRow="gender" msprop:Generator_ColumnPropNameInTable="genderColumn" msprop:Generator_UserColumnName="gender">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="team_id" msprop:Generator_ColumnVarNameInTable="columnteam_id" msprop:Generator_ColumnPropNameInRow="team_id" msprop:Generator_ColumnPropNameInTable="team_idColumn" msprop:Generator_UserColumnName="team_id" type="xs:int" />
+              <xs:element name="position" msprop:Generator_ColumnVarNameInTable="columnposition" msprop:Generator_ColumnPropNameInRow="position" msprop:Generator_ColumnPropNameInTable="positionColumn" msprop:Generator_UserColumnName="position" type="xs:int" />
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="team_name" msprop:Generator_ColumnVarNameInTable="columnteam_name" msprop:Generator_ColumnPropNameInRow="team_name" msprop:Generator_ColumnPropNameInTable="team_nameColumn" msprop:Generator_UserColumnName="team_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vBowlerDetail" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{03964CAB-90C6-4B44-A553-4974A06F65C6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KiaOra</RootNamespace>
+    <AssemblyName>KiaOra</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-bowling-64.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="averagesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>averagesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bowlerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bowlerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bowlerNoteDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bowlerNoteDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BowlerValidation.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="drawDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>drawDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmBowler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBowler.Designer.cs">
+      <DependentUpon>frmBowler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBowlerNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBowlerNote.Designer.cs">
+      <DependentUpon>frmBowlerNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDrawView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDrawView.Designer.cs">
+      <DependentUpon>frmDrawView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditBowler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditBowler.Designer.cs">
+      <DependentUpon>frmEditBowler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewBowler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewBowler.Designer.cs">
+      <DependentUpon>frmNewBowler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmResultsEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResultsEntry.Designer.cs">
+      <DependentUpon>frmResultsEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmResultsMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResultsMaintenance.Designer.cs">
+      <DependentUpon>frmResultsMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoundResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoundResults.Designer.cs">
+      <DependentUpon>frmRoundResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeason.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeason.Designer.cs">
+      <DependentUpon>frmSeason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTeamNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeamNote.Designer.cs">
+      <DependentUpon>frmTeamNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="scoresheetDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>scoresheetDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeam.Designer.cs">
+      <DependentUpon>frmTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="teamDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>teamDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="teamNoteDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>teamNoteDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TeamResultsCalculation.cs" />
+    <Compile Include="TeamValidation.cs" />
+    <Compile Include="vActiveBowler.cs">
+      <DependentUpon>vActiveBowler.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vActiveBowler.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vActiveBowler.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vActiveTeam.cs">
+      <DependentUpon>vActiveTeam.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vActiveTeam.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vActiveTeam.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vBowlerDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vBowlerDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vBowlerNote.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vBowlerNote.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vCurrentSeason.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vCurrentSeason.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vDrawDataSet.cs">
+      <DependentUpon>vDrawDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vDrawDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vDrawDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vRollingAverageDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vRollingAverageDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vRoundResult.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vRoundResult.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vScoresheetDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vScoresheetDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vTeam.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vTeam.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vTeamNote.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vTeamNote.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vWeekDataSet.cs">
+      <DependentUpon>vWeekDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="vWeekDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vWeekDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="weekDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>weekDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmBowler.resx">
+      <DependentUpon>frmBowler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBowlerNote.resx">
+      <DependentUpon>frmBowlerNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDrawView.resx">
+      <DependentUpon>frmDrawView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditBowler.resx">
+      <DependentUpon>frmEditBowler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewBowler.resx">
+      <DependentUpon>frmNewBowler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResultsEntry.resx">
+      <DependentUpon>frmResultsEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResultsMaintenance.resx">
+      <DependentUpon>frmResultsMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoundResults.resx">
+      <DependentUpon>frmRoundResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeason.resx">
+      <DependentUpon>frmSeason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeamNote.resx">
+      <DependentUpon>frmTeamNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmTeam.resx">
+      <DependentUpon>frmTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="averagesDataSet.xsc">
+      <DependentUpon>averagesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="averagesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>averagesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="averagesDataSet.xss">
+      <DependentUpon>averagesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bowlerDataSet.xsc">
+      <DependentUpon>bowlerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bowlerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bowlerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bowlerDataSet.xss">
+      <DependentUpon>bowlerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bowlerNoteDataSet.xsc">
+      <DependentUpon>bowlerNoteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bowlerNoteDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bowlerNoteDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bowlerNoteDataSet.xss">
+      <DependentUpon>bowlerNoteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="configDataSet.xsc">
+      <DependentUpon>configDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="configDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="configDataSet.xss">
+      <DependentUpon>configDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="drawDataSet.xsc">
+      <DependentUpon>drawDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="drawDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>drawDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="drawDataSet.xss">
+      <DependentUpon>drawDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="scoresheetDataSet.xsc">
+      <DependentUpon>scoresheetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="scoresheetDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>scoresheetDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="scoresheetDataSet.xss">
+      <DependentUpon>scoresheetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="teamDataSet.xsc">
+      <DependentUpon>teamDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="teamDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>teamDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="teamDataSet.xss">
+      <DependentUpon>teamDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="teamNoteDataSet.xsc">
+      <DependentUpon>teamNoteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="teamNoteDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>teamNoteDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="teamNoteDataSet.xss">
+      <DependentUpon>teamNoteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vActiveBowler.xsc">
+      <DependentUpon>vActiveBowler.xsd</DependentUpon>
+    </None>
+    <None Include="vActiveBowler.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vActiveBowler.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="vActiveBowler.xss">
+      <DependentUpon>vActiveBowler.xsd</DependentUpon>
+    </None>
+    <None Include="vActiveTeam.xsc">
+      <DependentUpon>vActiveTeam.xsd</DependentUpon>
+    </None>
+    <None Include="vActiveTeam.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vActiveTeam.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="vActiveTeam.xss">
+      <DependentUpon>vActiveTeam.xsd</DependentUpon>
+    </None>
+    <None Include="vBowlerDetail.xsc">
+      <DependentUpon>vBowlerDetail.xsd</DependentUpon>
+    </None>
+    <None Include="vBowlerDetail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vBowlerDetail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="vBowlerDetail.xss">
+      <DependentUpon>vBowlerDetail.xsd</DependentUpon>
+    </None>
+    <None Include="vBowlerNote.xsc">
+      <DependentUpon>vBowlerNote.xsd</DependentUpon>
+    </None>
+    <None Include="vBowlerNote.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vBowlerNote.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="vBowlerNote.xss">
+      <DependentUpon>vBowlerNote.xsd</DependentUpon>
+    </None>
+    <None Include="vCurrentSeason.xsc">
+      <DependentUpon>vCurrentSeason.xsd</DependentUpon>
+    </None>
+    <None Include="vCurrentSeason.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vCurrentSeason.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="vCurrentSeason.xss">
+      <DependentUpon>vCurrentSeason.xsd</DependentUpon>
+    </None>
+    <None Include="vDrawDataSet.xsc">
+      <DependentUpon>vDrawDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vDrawDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vDrawDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vDrawDataSet.xss">
+      <DependentUpon>vDrawDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vRollingAverageDataSet.xsc">
+      <DependentUpon>vRollingAverageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vRollingAverageDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vRollingAverageDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vRollingAverageDataSet.xss">
+      <DependentUpon>vRollingAverageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vRoundResult.xsc">
+      <DependentUpon>vRoundResult.xsd</DependentUpon>
+    </None>
+    <None Include="vRoundResult.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vRoundResult.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="vRoundResult.xss">
+      <DependentUpon>vRoundResult.xsd</DependentUpon>
+    </None>
+    <None Include="vScoresheetDataSet.xsc">
+      <DependentUpon>vScoresheetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vScoresheetDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vScoresheetDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vScoresheetDataSet.xss">
+      <DependentUpon>vScoresheetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vTeam.xsc">
+      <DependentUpon>vTeam.xsd</DependentUpon>
+    </None>
+    <None Include="vTeam.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vTeam.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="vTeam.xss">
+      <DependentUpon>vTeam.xsd</DependentUpon>
+    </None>
+    <None Include="vTeamNote.xsc">
+      <DependentUpon>vTeamNote.xsd</DependentUpon>
+    </None>
+    <None Include="vTeamNote.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vTeamNote.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="vTeamNote.xss">
+      <DependentUpon>vTeamNote.xsd</DependentUpon>
+    </None>
+    <None Include="vWeekDataSet.xsc">
+      <DependentUpon>vWeekDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vWeekDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vWeekDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vWeekDataSet.xss">
+      <DependentUpon>vWeekDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="weekDataSet.xsc">
+      <DependentUpon>weekDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="weekDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>weekDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="weekDataSet.xss">
+      <DependentUpon>weekDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8-bowling-64.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

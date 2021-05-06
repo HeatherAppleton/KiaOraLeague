@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="vActiveTeam" targetNamespace="http://tempuri.org/vActiveTeam.xsd" xmlns:mstns="http://tempuri.org/vActiveTeam.xsd" xmlns="http://tempuri.org/vActiveTeam.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hba_leagueConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hba_leagueConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.KiaOra.Properties.Settings.GlobalReference.Default.hba_leagueConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hba_teamTableAdapter" GeneratorDataComponentClassName="hba_teamTableAdapter" Name="hba_team" UserDataComponentName="hba_teamTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hba_leagueConnectionString (Settings)" DbObjectName="hba_league.dbo.hba_team" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        team_name, id, active_flag
+FROM            hba_team
+WHERE        (active_flag = 'Y') AND (id &lt;&gt; 101)
+UNION ALL
+SELECT        ' (select Team)' AS Expr1, 0 AS Expr2, 'Y' AS Expr3
+ORDER BY team_name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="team_name" DataSetColumn="team_name" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="active_flag" DataSetColumn="active_flag" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="vActiveTeam" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="vActiveTeam" msprop:Generator_UserDSName="vActiveTeam">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="hba_team" msprop:Generator_TableClassName="hba_teamDataTable" msprop:Generator_TableVarName="tablehba_team" msprop:Generator_RowChangedName="hba_teamRowChanged" msprop:Generator_TablePropName="hba_team" msprop:Generator_RowDeletingName="hba_teamRowDeleting" msprop:Generator_RowChangingName="hba_teamRowChanging" msprop:Generator_RowEvHandlerName="hba_teamRowChangeEventHandler" msprop:Generator_RowDeletedName="hba_teamRowDeleted" msprop:Generator_RowClassName="hba_teamRow" msprop:Generator_UserTableName="hba_team" msprop:Generator_RowEvArgName="hba_teamRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="team_name" msprop:Generator_ColumnVarNameInTable="columnteam_name" msprop:Generator_ColumnPropNameInRow="team_name" msprop:Generator_ColumnPropNameInTable="team_nameColumn" msprop:Generator_UserColumnName="team_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="active_flag" msprop:Generator_ColumnVarNameInTable="columnactive_flag" msprop:Generator_ColumnPropNameInRow="active_flag" msprop:Generator_ColumnPropNameInTable="active_flagColumn" msprop:Generator_UserColumnName="active_flag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:hba_team" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

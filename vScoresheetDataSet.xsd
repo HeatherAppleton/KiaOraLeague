@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="vScoresheetDataSet" targetNamespace="http://tempuri.org/vScoresheetDataSet.xsd" xmlns:mstns="http://tempuri.org/vScoresheetDataSet.xsd" xmlns="http://tempuri.org/vScoresheetDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hba_leagueConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hba_leagueConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.KiaOra.Properties.Settings.GlobalReference.Default.hba_leagueConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hba_v_scoresheetTableAdapter" GeneratorDataComponentClassName="hba_v_scoresheetTableAdapter" Name="hba_v_scoresheet" UserDataComponentName="hba_v_scoresheetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hba_leagueConnectionString (Settings)" DbObjectName="hba_league.dbo.hba_v_scoresheet" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        week_id, season, round, round_week, week_date, draw_id, pairing, lane, team_id, team_name, bowler_id, position, bowler_name, blind_score, handicap, game_1, game_2, game_3, scratch_series, handicapped_series, 
+                         average, id
+FROM            hba_v_scoresheet</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="week_id" DataSetColumn="week_id" />
+              <Mapping SourceColumn="season" DataSetColumn="season" />
+              <Mapping SourceColumn="round" DataSetColumn="round" />
+              <Mapping SourceColumn="round_week" DataSetColumn="round_week" />
+              <Mapping SourceColumn="week_date" DataSetColumn="week_date" />
+              <Mapping SourceColumn="pairing" DataSetColumn="pairing" />
+              <Mapping SourceColumn="lane" DataSetColumn="lane" />
+              <Mapping SourceColumn="team_id" DataSetColumn="team_id" />
+              <Mapping SourceColumn="team_name" DataSetColumn="team_name" />
+              <Mapping SourceColumn="bowler_id" DataSetColumn="bowler_id" />
+              <Mapping SourceColumn="position" DataSetColumn="position" />
+              <Mapping SourceColumn="bowler_name" DataSetColumn="bowler_name" />
+              <Mapping SourceColumn="blind_score" DataSetColumn="blind_score" />
+              <Mapping SourceColumn="handicap" DataSetColumn="handicap" />
+              <Mapping SourceColumn="game_1" DataSetColumn="game_1" />
+              <Mapping SourceColumn="game_2" DataSetColumn="game_2" />
+              <Mapping SourceColumn="game_3" DataSetColumn="game_3" />
+              <Mapping SourceColumn="scratch_series" DataSetColumn="scratch_series" />
+              <Mapping SourceColumn="handicapped_series" DataSetColumn="handicapped_series" />
+              <Mapping SourceColumn="average" DataSetColumn="average" />
+              <Mapping SourceColumn="draw_id" DataSetColumn="draw_id" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="vScoresheetDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="vScoresheetDataSet" msprop:Generator_UserDSName="vScoresheetDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="hba_v_scoresheet" msprop:Generator_TableClassName="hba_v_scoresheetDataTable" msprop:Generator_TableVarName="tablehba_v_scoresheet" msprop:Generator_TablePropName="hba_v_scoresheet" msprop:Generator_RowDeletingName="hba_v_scoresheetRowDeleting" msprop:Generator_RowChangingName="hba_v_scoresheetRowChanging" msprop:Generator_RowEvHandlerName="hba_v_scoresheetRowChangeEventHandler" msprop:Generator_RowDeletedName="hba_v_scoresheetRowDeleted" msprop:Generator_UserTableName="hba_v_scoresheet" msprop:Generator_RowChangedName="hba_v_scoresheetRowChanged" msprop:Generator_RowEvArgName="hba_v_scoresheetRowChangeEvent" msprop:Generator_RowClassName="hba_v_scoresheetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="week_id" msprop:Generator_ColumnVarNameInTable="columnweek_id" msprop:Generator_ColumnPropNameInRow="week_id" msprop:Generator_ColumnPropNameInTable="week_idColumn" msprop:Generator_UserColumnName="week_id" type="xs:int" />
+              <xs:element name="season" msprop:Generator_ColumnVarNameInTable="columnseason" msprop:Generator_ColumnPropNameInRow="season" msprop:Generator_ColumnPropNameInTable="seasonColumn" msprop:Generator_UserColumnName="season" type="xs:int" />
+              <xs:element name="round" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnround" msprop:Generator_ColumnPropNameInRow="round" msprop:Generator_ColumnPropNameInTable="roundColumn" msprop:Generator_UserColumnName="round" type="xs:int" minOccurs="0" />
+              <xs:element name="round_week" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnround_week" msprop:Generator_ColumnPropNameInRow="round_week" msprop:Generator_ColumnPropNameInTable="round_weekColumn" msprop:Generator_UserColumnName="round_week" type="xs:int" minOccurs="0" />
+              <xs:element name="week_date" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnweek_date" msprop:Generator_ColumnPropNameInRow="week_date" msprop:Generator_ColumnPropNameInTable="week_dateColumn" msprop:Generator_UserColumnName="week_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="pairing" msprop:Generator_ColumnVarNameInTable="columnpairing" msprop:Generator_ColumnPropNameInRow="pairing" msprop:Generator_ColumnPropNameInTable="pairingColumn" msprop:Generator_UserColumnName="pairing" type="xs:int" />
+              <xs:element name="lane" msprop:Generator_ColumnVarNameInTable="columnlane" msprop:Generator_ColumnPropNameInRow="lane" msprop:Generator_ColumnPropNameInTable="laneColumn" msprop:Generator_UserColumnName="lane" type="xs:int" />
+              <xs:element name="team_id" msprop:Generator_ColumnVarNameInTable="columnteam_id" msprop:Generator_ColumnPropNameInRow="team_id" msprop:Generator_ColumnPropNameInTable="team_idColumn" msprop:Generator_UserColumnName="team_id" type="xs:int" />
+              <xs:element name="team_name" msprop:Generator_ColumnVarNameInTable="columnteam_name" msprop:Generator_ColumnPropNameInRow="team_name" msprop:Generator_ColumnPropNameInTable="team_nameColumn" msprop:Generator_UserColumnName="team_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bowler_id" msprop:Generator_ColumnVarNameInTable="columnbowler_id" msprop:Generator_ColumnPropNameInRow="bowler_id" msprop:Generator_ColumnPropNameInTable="bowler_idColumn" msprop:Generator_UserColumnName="bowler_id" type="xs:int" />
+              <xs:element name="position" msprop:Generator_ColumnVarNameInTable="columnposition" msprop:Generator_ColumnPropNameInRow="position" msprop:Generator_ColumnPropNameInTable="positionColumn" msprop:Generator_UserColumnName="position" type="xs:int" />
+              <xs:element name="bowler_name" msprop:Generator_ColumnVarNameInTable="columnbowler_name" msprop:Generator_ColumnPropNameInRow="bowler_name" msprop:Generator_ColumnPropNameInTable="bowler_nameColumn" msprop:Generator_UserColumnName="bowler_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="blind_score" msprop:Generator_ColumnVarNameInTable="columnblind_score" msprop:Generator_ColumnPropNameInRow="blind_score" msprop:Generator_ColumnPropNameInTable="blind_scoreColumn" msprop:Generator_UserColumnName="blind_score">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="handicap" msprop:Generator_ColumnVarNameInTable="columnhandicap" msprop:Generator_ColumnPropNameInRow="handicap" msprop:Generator_ColumnPropNameInTable="handicapColumn" msprop:Generator_UserColumnName="handicap" type="xs:int" />
+              <xs:element name="game_1" msprop:Generator_ColumnVarNameInTable="columngame_1" msprop:Generator_ColumnPropNameInRow="game_1" msprop:Generator_ColumnPropNameInTable="game_1Column" msprop:Generator_UserColumnName="game_1" type="xs:int" />
+              <xs:element name="game_2" msprop:Generator_ColumnVarNameInTable="columngame_2" msprop:Generator_ColumnPropNameInRow="game_2" msprop:Generator_ColumnPropNameInTable="game_2Column" msprop:Generator_UserColumnName="game_2" type="xs:int" />
+              <xs:element name="game_3" msprop:Generator_ColumnVarNameInTable="columngame_3" msprop:Generator_ColumnPropNameInRow="game_3" msprop:Generator_ColumnPropNameInTable="game_3Column" msprop:Generator_UserColumnName="game_3" type="xs:int" />
+              <xs:element name="scratch_series" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnscratch_series" msprop:Generator_ColumnPropNameInRow="scratch_series" msprop:Generator_ColumnPropNameInTable="scratch_seriesColumn" msprop:Generator_UserColumnName="scratch_series" type="xs:int" minOccurs="0" />
+              <xs:element name="handicapped_series" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnhandicapped_series" msprop:Generator_ColumnPropNameInRow="handicapped_series" msprop:Generator_ColumnPropNameInTable="handicapped_seriesColumn" msprop:Generator_UserColumnName="handicapped_series" type="xs:int" minOccurs="0" />
+              <xs:element name="average" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnaverage" msprop:Generator_ColumnPropNameInRow="average" msprop:Generator_ColumnPropNameInTable="averageColumn" msprop:Generator_UserColumnName="average" type="xs:int" minOccurs="0" />
+              <xs:element name="draw_id" msprop:Generator_ColumnVarNameInTable="columndraw_id" msprop:Generator_ColumnPropNameInRow="draw_id" msprop:Generator_ColumnPropNameInTable="draw_idColumn" msprop:Generator_UserColumnName="draw_id" type="xs:int" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:hba_v_scoresheet" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
