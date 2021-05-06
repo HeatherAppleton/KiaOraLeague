@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="vRoundResult" targetNamespace="http://tempuri.org/vRoundResult.xsd" xmlns:mstns="http://tempuri.org/vRoundResult.xsd" xmlns="http://tempuri.org/vRoundResult.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hba_leagueConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hba_leagueConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.KiaOra.Properties.Settings.GlobalReference.Default.hba_leagueConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hba_v_RoundResultsTableAdapter" GeneratorDataComponentClassName="hba_v_RoundResultsTableAdapter" Name="hba_v_RoundResults" UserDataComponentName="hba_v_RoundResultsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hba_leagueConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select  d.Round 
+       ,d.Team
+	   ,d.Points 
+	   ,s.Pinfall 
+from (select  d.round as Round
+             ,d.team_name as Team
+	         ,sum(d.calculated_total) as Points
+      from   hba_v_draw d 
+      where  d.season = year(getdate()) 
+      group by  d.round
+               ,d.team_name 
+	) d
+join (select   s.round 
+             ,s.team_name
+			 ,sum(s.handicapped_series) as pinfall 
+	 from    hba_v_scoresheet s 
+	 where   s.season = year(getdate())
+	 group by  s.round 
+	          ,s.team_name 
+   ) s on d.Round = s.round 
+      and d.Team = s.team_name
+order by d.Round, Points desc, Pinfall desc, Team </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Round" DataSetColumn="Round" />
+              <Mapping SourceColumn="Team" DataSetColumn="Team" />
+              <Mapping SourceColumn="Points" DataSetColumn="Points" />
+              <Mapping SourceColumn="Pinfall" DataSetColumn="Pinfall" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="vRoundResult" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="vRoundResult" msprop:Generator_UserDSName="vRoundResult">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="hba_v_RoundResults" msprop:Generator_TableClassName="hba_v_RoundResultsDataTable" msprop:Generator_TableVarName="tablehba_v_RoundResults" msprop:Generator_RowChangedName="hba_v_RoundResultsRowChanged" msprop:Generator_TablePropName="hba_v_RoundResults" msprop:Generator_RowDeletingName="hba_v_RoundResultsRowDeleting" msprop:Generator_RowChangingName="hba_v_RoundResultsRowChanging" msprop:Generator_RowEvHandlerName="hba_v_RoundResultsRowChangeEventHandler" msprop:Generator_RowDeletedName="hba_v_RoundResultsRowDeleted" msprop:Generator_RowClassName="hba_v_RoundResultsRow" msprop:Generator_UserTableName="hba_v_RoundResults" msprop:Generator_RowEvArgName="hba_v_RoundResultsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Round" msprop:Generator_ColumnVarNameInTable="columnRound" msprop:Generator_ColumnPropNameInRow="Round" msprop:Generator_ColumnPropNameInTable="RoundColumn" msprop:Generator_UserColumnName="Round" type="xs:int" minOccurs="0" />
+              <xs:element name="Team" msprop:Generator_ColumnVarNameInTable="columnTeam" msprop:Generator_ColumnPropNameInRow="Team" msprop:Generator_ColumnPropNameInTable="TeamColumn" msprop:Generator_UserColumnName="Team">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Points" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPoints" msprop:Generator_ColumnPropNameInRow="Points" msprop:Generator_ColumnPropNameInTable="PointsColumn" msprop:Generator_UserColumnName="Points" type="xs:int" minOccurs="0" />
+              <xs:element name="Pinfall" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPinfall" msprop:Generator_ColumnPropNameInRow="Pinfall" msprop:Generator_ColumnPropNameInTable="PinfallColumn" msprop:Generator_UserColumnName="Pinfall" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
